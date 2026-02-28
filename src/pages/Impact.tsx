@@ -36,10 +36,10 @@ const galleryImages = [
 ];
 
 const stories = [
-  { title: "Raja the Street Dog", desc: "Found with a broken leg near a highway, Raja was rescued and treated at our shelter. After 3 months of care, he made a full recovery and found a loving home.", tag: "Dog Rescue" },
+  { title: "Injured Peacock Rescue", desc: "A beautiful peacock was found injured near a construction site in Shahdara. Our bike ambulance team carefully rescued it, treated its wounds at our bird hospital, and released it back into a safe habitat.", tag: "Peacock Rescue" },
   { title: "Injured Eagle Recovery", desc: "A majestic eagle was found with an injured wing in a village. Our bird hospital team performed surgery and rehabilitation. The eagle was released back into the wild.", tag: "Bird Rescue" },
   { title: "Cow Accident Rescue", desc: "A cow was hit by a vehicle on a busy road. Our large ambulance team reached the spot within minutes, provided first aid, and transported her to our shelter for treatment.", tag: "Cow Rescue" },
-  { title: "Abandoned Kittens Saved", desc: "Four newborn kittens were found abandoned in a drain. Our bike ambulance team rescued them and nursed them back to health at our shelter.", tag: "Cat Rescue" },
+  { title: "Horse Rescued from Neglect", desc: "An abandoned and malnourished horse was found tied near a railway track. Our team rescued it, provided veterinary care, proper nutrition, and nursed it back to health at our shelter.", tag: "Horse Rescue" },
 ];
 
 const Impact = () => {
