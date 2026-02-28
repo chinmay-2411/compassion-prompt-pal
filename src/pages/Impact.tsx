@@ -1,5 +1,7 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import StatCounter from "@/components/StatCounter";
 import gallery1 from "@/assets/gallery/gallery-1.jpg";
 import gallery2 from "@/assets/gallery/gallery-2.jpg";
@@ -79,19 +81,35 @@ const Impact = () => {
         </div>
       </section>
 
-      {/* Gallery Placeholder */}
+      {/* Photo Gallery */}
+      <GallerySection images={galleryImages} />
+    </div>
+  );
+};
+
+const GallerySection = ({ images }: { images: { src: string; alt: string }[] }) => {
+  const [selected, setSelected] = useState<number | null>(null);
+
+  const navigate = (dir: number) => {
+    if (selected === null) return;
+    setSelected((selected + dir + images.length) % images.length);
+  };
+
+  return (
+    <>
       <section className="py-16 bg-muted/50">
         <div className="container">
           <h2 className="font-display text-3xl font-bold text-center mb-12">Photo Gallery</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {galleryImages.map((img, i) => (
+            {images.map((img, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="aspect-square rounded-lg overflow-hidden"
+                className="aspect-square rounded-lg overflow-hidden cursor-pointer"
+                onClick={() => setSelected(i)}
               >
                 <img src={img.src} alt={img.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
               </motion.div>
@@ -99,7 +117,52 @@ const Impact = () => {
           </div>
         </div>
       </section>
-    </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {selected !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+            onClick={() => setSelected(null)}
+          >
+            <button
+              onClick={(e) => { e.stopPropagation(); setSelected(null); }}
+              className="absolute top-4 right-4 text-white/80 hover:text-white z-50"
+            >
+              <X className="h-8 w-8" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); navigate(-1); }}
+              className="absolute left-4 text-white/80 hover:text-white z-50"
+            >
+              <ChevronLeft className="h-10 w-10" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); navigate(1); }}
+              className="absolute right-4 text-white/80 hover:text-white z-50"
+            >
+              <ChevronRight className="h-10 w-10" />
+            </button>
+            <motion.img
+              key={selected}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              src={images[selected].src}
+              alt={images[selected].alt}
+              className="max-w-full max-h-[85vh] object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <div className="absolute bottom-4 text-white/70 text-sm">
+              {images[selected].alt} — {selected + 1} / {images.length}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
