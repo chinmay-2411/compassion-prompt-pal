@@ -67,7 +67,7 @@ const services = [
     image: bikeAmbulanceImg,
     desc: "We operate India's innovative bike ambulance service for bird rescue along with a large vehicle ambulance for cows and big animals — ensuring rapid emergency response across Delhi NCR.",
     details: [
-      "4 bike ambulances for quick bird rescue in narrow lanes",
+      "5 bike ambulances for quick bird rescue in narrow lanes",
       "1 large ambulance for cows, bulls & big animals",
       "Equipped with first-aid kits and rescue tools",
       "Covers all areas of Delhi NCR",
@@ -154,13 +154,13 @@ const OurWork = () => {
       <section className="py-16 bg-muted/50">
         <div className="container">
           <h2 className="font-display text-3xl font-bold text-center mb-12">Our Ambulance Fleet</h2>
-          <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">We operate a fleet of <strong className="text-foreground">5 ambulances</strong> — 4 bike ambulances for quick bird rescues and 1 large ambulance for cows and big animals.</p>
+          <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">We operate a fleet of <strong className="text-foreground">6 ambulances</strong> — 5 bike ambulances for quick bird rescues and 1 large ambulance for cows and big animals.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <Card className="border-none bg-card h-full">
                 <CardContent className="p-8 text-center">
                   <Bike className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h3 className="font-display text-xl font-semibold mb-3">4 Bike Ambulances</h3>
+                  <h3 className="font-display text-xl font-semibold mb-3">5 Bike Ambulances</h3>
                   <p className="text-muted-foreground text-sm">Quick-response bike ambulances for bird emergencies. Navigate narrow lanes and reach injured birds faster than any vehicle.</p>
                 </CardContent>
               </Card>

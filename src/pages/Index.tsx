@@ -68,7 +68,7 @@ const Index = () => {
             <StatCounter end={7} suffix="+" label="Years of Service" />
             <StatCounter end={200000} suffix="+" label="Lives Rescued" />
             <StatCounter end={2} label="Shelters & Hospitals" />
-            <StatCounter end={5} label="Ambulances" />
+            <StatCounter end={6} label="Ambulances" />
           </div>
         </div>
       </section>
@@ -104,7 +104,7 @@ const Index = () => {
             {[
               { icon: Bird, title: "Bird Rescue & Hospital", desc: "Dedicated bird hospital with specialized care for injured and sick birds." },
               { icon: Heart, title: "Cow & Large Animal Rescue", desc: "Large ambulance service for cows and big animals with emergency medical treatment." },
-              { icon: Truck, title: "Ambulance Services", desc: "4 bike ambulances for birds and 1 large ambulance for cows and big animals." },
+              { icon: Truck, title: "Ambulance Services", desc: "5 bike ambulances for birds and 1 large ambulance for cows and big animals." },
             ].map((service, i) => (
               <motion.div
                 key={i}
