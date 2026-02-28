@@ -8,7 +8,7 @@ const founders = [
   {
     name: "Amit Jain",
     role: "Founder",
-    age: "45 years old",
+    age: "",
     photo: amitPhoto,
     bio: "A dedicated businessman who takes out time from his busy schedule to serve animals in need. Despite running a successful business, Amit ji's heart belongs to the voiceless creatures. His vision and tireless efforts have been the backbone of this trust since 2018.",
     quote: "Every animal deserves love and care. Business can wait, but a life in pain cannot.",
