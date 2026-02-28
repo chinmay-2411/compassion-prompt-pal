@@ -51,7 +51,7 @@ const Index = () => {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="font-bold text-base border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground">
-                <a href="tel:+918866591008">
+                <a href="tel:+919716565758">
                   <Phone className="h-5 w-5 mr-1" /> Report Animal in Need
                 </a>
               </Button>
