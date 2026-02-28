@@ -167,7 +167,7 @@ const Index = () => {
                 Donate Now
               </a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-bold text-base">
+            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary font-bold text-base">
               <Link to="/get-involved">Volunteer With Us</Link>
             </Button>
           </div>
