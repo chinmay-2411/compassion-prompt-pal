@@ -73,7 +73,7 @@ const Contact = () => {
                       <MapPin className="h-5 w-5 text-primary mt-0.5" />
                       <div>
                         <div className="font-semibold mb-1">Registered Office</div>
-                        <p className="text-muted-foreground text-sm">R-117, Flat No. 2, Khirki Ext, Malviya Nagar, New Delhi</p>
+                        <p className="text-muted-foreground text-sm">R-117, Khirki Ext, Malviya Nagar, New Delhi</p>
                       </div>
                     </div>
                   </CardContent>
