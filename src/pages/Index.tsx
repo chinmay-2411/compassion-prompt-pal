@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Heart, Users, Phone, Bird, Shield, Truck } from "lucide-react";
+import { Heart, Users, Phone, Bird, Shield, Truck, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import StatCounter from "@/components/StatCounter";
@@ -49,6 +49,11 @@ const Index = () => {
               <Button asChild size="lg" variant="outline" className="font-bold text-base border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground">
                 <a href="tel:+918866591008">
                   <Phone className="h-5 w-5 mr-1" /> Report Animal in Need
+                </a>
+              </Button>
+              <Button asChild size="lg" className="bg-[#25D366] text-white hover:bg-[#25D366]/80 font-bold text-base">
+                <a href="https://chat.whatsapp.com/HcZMMJa0KdD38YioomKm21?mode=gi_t" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-5 w-5 mr-1" /> Join WhatsApp Group
                 </a>
               </Button>
             </div>
