@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Heart, Users, Building2 } from "lucide-react";
+import { Heart, Users, Building2, Landmark, IndianRupee } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -56,8 +56,39 @@ const GetInvolved = () => {
                   <CardContent className="p-8">
                     <Heart className="h-10 w-10 text-primary mb-4" />
                     <h3 className="font-display text-xl font-semibold mb-3">Donate</h3>
-                    <p className="text-muted-foreground text-sm mb-6">Your donations help us run our shelters, hospitals, and ambulance services. Every contribution saves a life.</p>
-                    <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/80 font-bold">
+                    <p className="text-muted-foreground text-sm mb-4">Your donations help us run our shelters, hospitals, and ambulance services. Every contribution saves a life.</p>
+                    
+                    {/* Donation Tiers */}
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-6">
+                      {[
+                        { amount: "₹1,100", label: "Food" },
+                        { amount: "₹2,100", label: "Shelter Support" },
+                        { amount: "₹3,100", label: "Ambulance" },
+                        { amount: "₹5,100", label: "Medicine" },
+                        { amount: "₹11,000", label: "All Support" },
+                      ].map((tier, i) => (
+                        <div key={i} className="bg-background rounded-lg p-3 text-center border border-primary/20">
+                          <div className="font-bold text-primary text-sm">{tier.amount}</div>
+                          <div className="text-[11px] text-muted-foreground">{tier.label}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Bank Details */}
+                    <div className="bg-background rounded-lg p-4 border border-primary/20 mb-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Landmark className="h-4 w-4 text-primary" />
+                        <span className="font-semibold text-sm">Bank Transfer Details</span>
+                      </div>
+                      <div className="text-xs space-y-1 text-muted-foreground">
+                        <p><span className="font-medium text-foreground">A/C Name:</span> Vidyasagar Jeev Daya Parivar Trust</p>
+                        <p><span className="font-medium text-foreground">A/C No:</span> 50200073992952</p>
+                        <p><span className="font-medium text-foreground">IFSC Code:</span> HDFC0001360</p>
+                        <p><span className="font-medium text-foreground">Bank:</span> HDFC Bank</p>
+                      </div>
+                    </div>
+
+                    <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/80 font-bold">
                       <a href="https://wa.me/918866591008?text=I%20want%20to%20donate" target="_blank" rel="noopener noreferrer">Donate via WhatsApp</a>
                     </Button>
                   </CardContent>
