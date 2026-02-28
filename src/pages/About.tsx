@@ -7,7 +7,7 @@ import abhishekPhoto from "@/assets/abhishek-jain.jpg";
 const founders = [
   {
     name: "Amit Jain",
-    role: "Co-Founder",
+    role: "Founder",
     age: "45 years old",
     photo: amitPhoto,
     bio: "A dedicated businessman who takes out time from his busy schedule to serve animals in need. Despite running a successful business, Amit ji's heart belongs to the voiceless creatures. His vision and tireless efforts have been the backbone of this trust since 2018.",
