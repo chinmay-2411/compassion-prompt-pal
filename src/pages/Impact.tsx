@@ -9,6 +9,12 @@ import gallery5 from "@/assets/gallery/gallery-5.jpg";
 import gallery6 from "@/assets/gallery/gallery-6.jpg";
 import gallery7 from "@/assets/gallery/gallery-7.jpg";
 import gallery8 from "@/assets/gallery/gallery-8.jpg";
+import gallery9 from "@/assets/gallery/gallery-9.jpg";
+import gallery10 from "@/assets/gallery/gallery-10.jpg";
+import gallery11 from "@/assets/gallery/gallery-11.jpg";
+import gallery12 from "@/assets/gallery/gallery-12.jpg";
+import gallery13 from "@/assets/gallery/gallery-13.jpg";
+import gallery14 from "@/assets/gallery/gallery-14.jpg";
 
 const galleryImages = [
   { src: gallery1, alt: "Meeting with former President of India" },
@@ -19,6 +25,12 @@ const galleryImages = [
   { src: gallery6, alt: "Newspaper coverage - Dainik Jagran" },
   { src: gallery7, alt: "Rabbit rescue and treatment" },
   { src: gallery8, alt: "Young volunteer with rescued bird" },
+  { src: gallery9, alt: "Aaj Tak news coverage of trust" },
+  { src: gallery10, alt: "Community awareness campaign" },
+  { src: gallery11, alt: "Meeting with officials" },
+  { src: gallery12, alt: "Bird rescue in action" },
+  { src: gallery13, alt: "ANI News interview about bike ambulance" },
+  { src: gallery14, alt: "Dainik Jagran newspaper feature" },
 ];
 
 const stories = [
