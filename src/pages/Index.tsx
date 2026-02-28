@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Heart, Users, Phone, Bird, Shield, Truck, MessageCircle, Landmark, IndianRupee } from "lucide-react";
+import upiQrCode from "@/assets/upi-qr-code.png";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import StatCounter from "@/components/StatCounter";
@@ -189,17 +190,25 @@ const Index = () => {
               ))}
             </div>
 
-            {/* Bank Details */}
-            <div className="bg-card rounded-xl p-6 border border-primary/20 mb-8 max-w-lg mx-auto">
-              <div className="flex items-center gap-2 mb-3">
-                <Landmark className="h-5 w-5 text-primary" />
-                <span className="font-display font-semibold">Bank Transfer Details</span>
+            {/* UPI QR Code & Bank Details */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-2xl mx-auto">
+              <div className="bg-card rounded-xl p-6 border border-primary/20 flex flex-col items-center">
+                <span className="font-display font-semibold mb-3">Scan & Pay via UPI</span>
+                <img src={upiQrCode} alt="UPI QR Code for donations" className="w-48 h-48 object-contain mb-2" />
+                <p className="text-xs text-muted-foreground text-center">Scan with any UPI app — Google Pay, PhonePe, Paytm, etc.</p>
               </div>
-              <div className="text-sm space-y-1.5 text-muted-foreground">
-                <p><span className="font-medium text-foreground">A/C Name:</span> Vidyasagar Jeev Daya Parivar Trust</p>
-                <p><span className="font-medium text-foreground">A/C No:</span> 50200073992952</p>
-                <p><span className="font-medium text-foreground">IFSC Code:</span> HDFC0001360</p>
-                <p><span className="font-medium text-foreground">Bank:</span> HDFC Bank</p>
+              <div className="bg-card rounded-xl p-6 border border-primary/20">
+                <div className="flex items-center gap-2 mb-3">
+                  <Landmark className="h-5 w-5 text-primary" />
+                  <span className="font-display font-semibold">Bank Transfer Details</span>
+                </div>
+                <div className="text-sm space-y-1.5 text-muted-foreground">
+                  <p><span className="font-medium text-foreground">A/C Name:</span> Vidyasagar Jeev Daya Parivar Trust</p>
+                  <p><span className="font-medium text-foreground">A/C No:</span> 50200073992952</p>
+                  <p><span className="font-medium text-foreground">IFSC Code:</span> HDFC0001360</p>
+                  <p><span className="font-medium text-foreground">Bank:</span> HDFC Bank</p>
+                </div>
+                <p className="text-xs text-muted-foreground mt-3">For receipt, send screenshot on WhatsApp: 9716565758</p>
               </div>
             </div>
 

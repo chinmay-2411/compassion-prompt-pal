@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Heart, Users, Building2, Landmark, IndianRupee } from "lucide-react";
+import upiQrCode from "@/assets/upi-qr-code.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -74,19 +75,27 @@ const GetInvolved = () => {
                       ))}
                     </div>
 
-                    {/* Bank Details */}
-                    <div className="bg-background rounded-lg p-4 border border-primary/20 mb-4">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Landmark className="h-4 w-4 text-primary" />
-                        <span className="font-semibold text-sm">Bank Transfer Details</span>
-                      </div>
-                      <div className="text-xs space-y-1 text-muted-foreground">
-                        <p><span className="font-medium text-foreground">A/C Name:</span> Vidyasagar Jeev Daya Parivar Trust</p>
-                        <p><span className="font-medium text-foreground">A/C No:</span> 50200073992952</p>
-                        <p><span className="font-medium text-foreground">IFSC Code:</span> HDFC0001360</p>
-                        <p><span className="font-medium text-foreground">Bank:</span> HDFC Bank</p>
-                      </div>
-                    </div>
+                     {/* UPI QR Code */}
+                     <div className="bg-background rounded-lg p-4 border border-primary/20 mb-4 text-center">
+                       <span className="font-semibold text-sm block mb-2">Scan & Pay via UPI</span>
+                       <img src={upiQrCode} alt="UPI QR Code for donations" className="w-36 h-36 object-contain mx-auto mb-1" />
+                       <p className="text-[11px] text-muted-foreground">Google Pay, PhonePe, Paytm, etc.</p>
+                     </div>
+
+                     {/* Bank Details */}
+                     <div className="bg-background rounded-lg p-4 border border-primary/20 mb-4">
+                       <div className="flex items-center gap-2 mb-2">
+                         <Landmark className="h-4 w-4 text-primary" />
+                         <span className="font-semibold text-sm">Bank Transfer Details</span>
+                       </div>
+                       <div className="text-xs space-y-1 text-muted-foreground">
+                         <p><span className="font-medium text-foreground">A/C Name:</span> Vidyasagar Jeev Daya Parivar Trust</p>
+                         <p><span className="font-medium text-foreground">A/C No:</span> 50200073992952</p>
+                         <p><span className="font-medium text-foreground">IFSC Code:</span> HDFC0001360</p>
+                         <p><span className="font-medium text-foreground">Bank:</span> HDFC Bank</p>
+                       </div>
+                       <p className="text-[11px] text-muted-foreground mt-2">For receipt, send screenshot on WhatsApp: 9716565758</p>
+                     </div>
 
                     <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/80 font-bold">
                       <a href="https://wa.me/918866591008?text=I%20want%20to%20donate" target="_blank" rel="noopener noreferrer">Donate via WhatsApp</a>
