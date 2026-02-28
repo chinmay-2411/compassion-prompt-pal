@@ -43,10 +43,10 @@ const StatCounter = ({ end, suffix = "", prefix = "", label, duration = 2000 }: 
 
   return (
     <div ref={ref} className="text-center">
-      <div className="font-display text-4xl md:text-5xl font-bold text-primary">
+      <div className="font-display text-4xl md:text-5xl font-bold text-inherit">
         {prefix}{count.toLocaleString('en-IN')}{suffix}
       </div>
-      <p className="mt-2 text-sm md:text-base text-muted-foreground font-medium">{label}</p>
+      <p className="mt-2 text-sm md:text-base text-inherit/80 font-medium">{label}</p>
     </div>
   );
 };
