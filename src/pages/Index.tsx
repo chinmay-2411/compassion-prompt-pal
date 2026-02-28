@@ -9,6 +9,9 @@ const testimonials = [
   { name: "Rajesh Patel", text: "I called them at night for an injured bird, and they arrived within minutes. Truly dedicated people!", location: "Shahdara, Delhi" },
   { name: "Priya Sharma", text: "The trust has been doing incredible work for animals in our community. Their shelter is well-maintained and the animals are cared for with love.", location: "Noida" },
   { name: "Mahesh Joshi", text: "I've been volunteering with them for 2 years. The passion of Amit ji and Abhishek ji for animal welfare is inspiring.", location: "Ghaziabad" },
+  { name: "Sunita Agarwal", text: "They rescued an injured cow from our street within 30 minutes of calling. The large ambulance team was very professional and caring.", location: "Laxmi Nagar, Delhi" },
+  { name: "Rohit Verma", text: "The bike ambulance is a brilliant idea! They saved a kite that was tangled in a thread near my building. God bless this team.", location: "Mayur Vihar, Delhi" },
+  { name: "Neha Gupta", text: "I donated to their trust and they sent me updates about the animals my money helped rescue. Very transparent and genuine people.", location: "Faridabad" },
 ];
 
 const Index = () => {
