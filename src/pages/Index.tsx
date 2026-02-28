@@ -41,7 +41,7 @@ const Index = () => {
               <span className="text-primary">Spreading Compassion.</span><br />
               Protecting the Voiceless.
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
+            <p className="text-lg md:text-xl text-foreground mb-8 max-w-2xl">
               Vidyasagar Jeev Daya Parivar Trust has been rescuing and rehabilitating animals across India since 2018. Over 2,00,000 lives saved and counting.
             </p>
             <div className="flex flex-wrap gap-4">
