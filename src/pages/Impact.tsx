@@ -1,6 +1,25 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import StatCounter from "@/components/StatCounter";
+import gallery1 from "@/assets/gallery/gallery-1.jpg";
+import gallery2 from "@/assets/gallery/gallery-2.jpg";
+import gallery3 from "@/assets/gallery/gallery-3.jpg";
+import gallery4 from "@/assets/gallery/gallery-4.jpg";
+import gallery5 from "@/assets/gallery/gallery-5.jpg";
+import gallery6 from "@/assets/gallery/gallery-6.jpg";
+import gallery7 from "@/assets/gallery/gallery-7.jpg";
+import gallery8 from "@/assets/gallery/gallery-8.jpg";
+
+const galleryImages = [
+  { src: gallery1, alt: "Meeting with former President of India" },
+  { src: gallery2, alt: "Presenting trust work to dignitaries" },
+  { src: gallery3, alt: "Award ceremony for animal welfare" },
+  { src: gallery4, alt: "Founders receiving blessings" },
+  { src: gallery5, alt: "Bike ambulance for bird rescue" },
+  { src: gallery6, alt: "Newspaper coverage - Dainik Jagran" },
+  { src: gallery7, alt: "Rabbit rescue and treatment" },
+  { src: gallery8, alt: "Young volunteer with rescued bird" },
+];
 
 const stories = [
   { title: "Raja the Street Dog", desc: "Found with a broken leg near a highway, Raja was rescued and treated at our shelter. After 3 months of care, he made a full recovery and found a loving home.", tag: "Dog Rescue" },
@@ -53,16 +72,16 @@ const Impact = () => {
         <div className="container">
           <h2 className="font-display text-3xl font-bold text-center mb-12">Photo Gallery</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {Array.from({ length: 8 }).map((_, i) => (
+            {galleryImages.map((img, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="aspect-square rounded-lg bg-card border border-border flex items-center justify-center"
+                className="aspect-square rounded-lg overflow-hidden"
               >
-                <span className="text-muted-foreground text-sm">Photo {i + 1}</span>
+                <img src={img.src} alt={img.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
               </motion.div>
             ))}
           </div>
