@@ -23,7 +23,7 @@ const Index = () => {
       <section className="relative min-h-[80vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroBg} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-background/75" />
+          <div className="absolute inset-0 bg-background/85" />
         </div>
         <div className="container py-16 md:py-24 relative z-10">
           <motion.div
