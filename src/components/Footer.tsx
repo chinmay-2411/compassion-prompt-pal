@@ -55,7 +55,12 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 text-accent mt-0.5" />
-                <span className="text-primary-foreground/80">India</span>
+                <div className="text-primary-foreground/80">
+                  <div className="font-medium text-primary-foreground">Registered Office:</div>
+                  R-117, Flat No. 2, Khirki Ext, Malviya Nagar, New Delhi
+                  <div className="font-medium text-primary-foreground mt-2">Bird Shelter:</div>
+                  21/5, Babarpur, Near Maujpur Metro Station, Shahdara, Delhi - 110032
+                </div>
               </li>
             </ul>
           </div>
