@@ -1,6 +1,27 @@
 import { motion } from "framer-motion";
-import { Heart, Target, Eye, Shield, Award } from "lucide-react";
+import { Target, Eye, Shield, Award, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import amitPhoto from "@/assets/amit-jain.jpg";
+import abhishekPhoto from "@/assets/abhishek-jain.jpg";
+
+const founders = [
+  {
+    name: "Amit Jain",
+    role: "Co-Founder",
+    age: "45 years old",
+    photo: amitPhoto,
+    bio: "A dedicated businessman who takes out time from his busy schedule to serve animals in need. Despite running a successful business, Amit ji's heart belongs to the voiceless creatures. His vision and tireless efforts have been the backbone of this trust since 2018.",
+    quote: "Every animal deserves love and care. Business can wait, but a life in pain cannot.",
+  },
+  {
+    name: "Abhishek Jain",
+    role: "Co-Founder",
+    age: "",
+    photo: abhishekPhoto,
+    bio: "A compassionate soul who co-founded the trust alongside Amit ji. Abhishek ji manages day-to-day rescue operations and ensures every rescued animal receives proper medical treatment and rehabilitation at our shelters.",
+    quote: "When you save one life, you save the entire world. That's what keeps us going every day.",
+  },
+];
 
 const About = () => {
   return (
@@ -33,8 +54,8 @@ const About = () => {
               </p>
               <p>
                 Today, Vidyasagar Jeev Daya Parivar Trust operates a dedicated animal shelter with a hospital, a specialized bird hospital, 
-                India's first bike ambulance for small animal emergencies, and a large ambulance for cows and big animals. 
-                We have rescued over <strong className="text-foreground">2,00,000+ lives</strong> and continue to serve every day.
+                a fleet of <strong className="text-foreground">5 ambulances</strong> including 4 bike ambulances for small animal emergencies and 1 large ambulance for four-legged animals. 
+                We have rescued over <strong className="text-foreground">2,00,000+ lives</strong> and continue to serve every day from 9 AM to 8 PM.
               </p>
             </div>
           </motion.div>
@@ -44,20 +65,29 @@ const About = () => {
       {/* Founders */}
       <section className="py-16 bg-muted/50">
         <div className="container">
-          <h2 className="font-display text-3xl font-bold text-center mb-12">Our Co-Founders</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-            {[
-              { name: "Amit Jain", role: "Co-Founder" },
-              { name: "Abhishek Jain", role: "Co-Founder" },
-            ].map((founder, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.2 }}>
-                <Card className="text-center border-none">
-                  <CardContent className="p-8">
-                    <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      <Heart className="h-10 w-10 text-primary" />
+          <h2 className="font-display text-3xl font-bold text-center mb-4">Our Co-Founders</h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">The hearts and hands behind every rescue, every shelter, and every life saved.</p>
+          <div className="space-y-12 max-w-4xl mx-auto">
+            {founders.map((founder, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.2, duration: 0.6 }}>
+                <Card className="border-none overflow-hidden">
+                  <CardContent className="p-0">
+                    <div className={`flex flex-col ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+                      {/* Photo */}
+                      <div className="md:w-1/3 relative">
+                        <img src={founder.photo} alt={founder.name} className="w-full h-64 md:h-full object-cover" />
+                      </div>
+                      {/* Info */}
+                      <div className="md:w-2/3 p-8 md:p-10 flex flex-col justify-center">
+                        <h3 className="font-display text-2xl font-bold mb-1">{founder.name}</h3>
+                        <p className="text-primary font-medium text-sm mb-1">{founder.role} {founder.age && `• ${founder.age}`}</p>
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-4">{founder.bio}</p>
+                        <div className="bg-primary/5 rounded-lg p-4 flex gap-3 items-start">
+                          <Quote className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                          <p className="text-foreground italic text-sm">"{founder.quote}"</p>
+                        </div>
+                      </div>
                     </div>
-                    <h3 className="font-display text-xl font-semibold">{founder.name}</h3>
-                    <p className="text-muted-foreground">{founder.role}</p>
                   </CardContent>
                 </Card>
               </motion.div>

@@ -47,13 +47,14 @@ const OurWork = () => {
       <section className="py-16 bg-muted/50">
         <div className="container">
           <h2 className="font-display text-3xl font-bold text-center mb-12">Our Ambulance Fleet</h2>
+          <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">We operate a fleet of <strong className="text-foreground">5 ambulances</strong> — 4 bike ambulances for quick small animal rescues and 1 large ambulance for four-legged animals like cows and bulls.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <Card className="border-none bg-card h-full">
                 <CardContent className="p-8 text-center">
                   <Bike className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h3 className="font-display text-xl font-semibold mb-3">Bike Ambulance</h3>
-                  <p className="text-muted-foreground text-sm">India's first bike ambulance for small animal emergencies. Navigates narrow lanes and reaches injured animals faster than any vehicle.</p>
+                  <h3 className="font-display text-xl font-semibold mb-3">4 Bike Ambulances</h3>
+                  <p className="text-muted-foreground text-sm">Quick-response bike ambulances for small animal emergencies. Navigate narrow lanes and reach injured animals faster than any vehicle.</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -61,8 +62,8 @@ const OurWork = () => {
               <Card className="border-none bg-card h-full">
                 <CardContent className="p-8 text-center">
                   <Truck className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h3 className="font-display text-xl font-semibold mb-3">Large Ambulance</h3>
-                  <p className="text-muted-foreground text-sm">Fully equipped vehicle for rescuing cows, bulls, and large animals. Features on-board first aid and safe transport capabilities.</p>
+                  <h3 className="font-display text-xl font-semibold mb-3">1 Large Ambulance</h3>
+                  <p className="text-muted-foreground text-sm">Fully equipped large vehicle dedicated to rescuing four-legged animals — cows, bulls, and other big animals. Features on-board first aid and safe transport.</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -76,8 +77,8 @@ const OurWork = () => {
           <div className="inline-flex items-center gap-3 bg-accent/20 px-6 py-4 rounded-xl">
             <Clock className="h-6 w-6 text-accent-foreground" />
             <div className="text-left">
-              <div className="font-semibold">Rescue Services</div>
-              <p className="text-sm text-muted-foreground">Our rescue services operate during daytime hours. For emergencies, call us and we'll do our best to help.</p>
+              <div className="font-semibold">Working Hours: 9:00 AM – 8:00 PM</div>
+              <p className="text-sm text-muted-foreground">Our rescue services operate daily from 9 AM to 8 PM. For emergencies, call us and we'll do our best to help.</p>
             </div>
           </div>
         </div>
