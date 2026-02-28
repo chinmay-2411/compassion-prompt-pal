@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Heart, Users, Phone, Bird, Shield, Truck, MessageCircle } from "lucide-react";
+import { Heart, Users, Phone, Bird, Shield, Truck, MessageCircle, Landmark, IndianRupee } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import StatCounter from "@/components/StatCounter";
@@ -159,6 +159,58 @@ const Index = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Donation Section */}
+      <section className="py-16 md:py-24 bg-accent/5">
+        <div className="container max-w-4xl">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-4">
+              <Heart className="inline h-8 w-8 text-primary mr-2" />
+              Support Our Cause
+            </h2>
+            <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">Your donations help us run our shelters, hospitals, and ambulance services. Every contribution saves a life.</p>
+
+            {/* Donation Tiers */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-8">
+              {[
+                { amount: "₹1,100", label: "Food" },
+                { amount: "₹2,100", label: "Shelter Support" },
+                { amount: "₹3,100", label: "Ambulance" },
+                { amount: "₹5,100", label: "Medicine" },
+                { amount: "₹11,000", label: "All Support" },
+              ].map((tier, i) => (
+                <div key={i} className="bg-card rounded-lg p-4 text-center border border-primary/20 hover:shadow-md transition-shadow">
+                  <IndianRupee className="h-4 w-4 text-primary mx-auto mb-1" />
+                  <div className="font-bold text-primary text-lg">{tier.amount}</div>
+                  <div className="text-xs text-muted-foreground">{tier.label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Bank Details */}
+            <div className="bg-card rounded-xl p-6 border border-primary/20 mb-8 max-w-lg mx-auto">
+              <div className="flex items-center gap-2 mb-3">
+                <Landmark className="h-5 w-5 text-primary" />
+                <span className="font-display font-semibold">Bank Transfer Details</span>
+              </div>
+              <div className="text-sm space-y-1.5 text-muted-foreground">
+                <p><span className="font-medium text-foreground">A/C Name:</span> Vidyasagar Jeev Daya Parivar Trust</p>
+                <p><span className="font-medium text-foreground">A/C No:</span> 50200073992952</p>
+                <p><span className="font-medium text-foreground">IFSC Code:</span> HDFC0001360</p>
+                <p><span className="font-medium text-foreground">Bank:</span> HDFC Bank</p>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/80 font-bold text-base">
+                <a href="https://wa.me/918866591008?text=I%20want%20to%20donate" target="_blank" rel="noopener noreferrer">
+                  Donate via WhatsApp
+                </a>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
 
