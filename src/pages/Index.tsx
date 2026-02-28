@@ -63,7 +63,7 @@ const Index = () => {
             <StatCounter end={7} suffix="+" label="Years of Service" />
             <StatCounter end={200000} suffix="+" label="Lives Rescued" />
             <StatCounter end={2} label="Shelters & Hospitals" />
-            <StatCounter end={2} label="Ambulances" />
+            <StatCounter end={5} label="Ambulances" />
           </div>
         </div>
       </section>
