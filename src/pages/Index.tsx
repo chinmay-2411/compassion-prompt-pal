@@ -63,7 +63,7 @@ const Index = () => {
             <StatCounter end={7} suffix="+" label="Years of Service" />
             <StatCounter end={200000} suffix="+" label="Lives Rescued" />
             <StatCounter end={2} label="Shelters & Hospitals" />
-            <StatCounter end={5} label="Ambulances" />
+            <StatCounter end={4} label="Ambulances" />
           </div>
         </div>
       </section>
@@ -82,7 +82,7 @@ const Index = () => {
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
               Founded by <strong className="text-foreground">Amit Jain</strong> and <strong className="text-foreground">Abhishek Jain</strong> in 2018, 
               Vidyasagar Jeev Daya Parivar Trust is dedicated to the rescue, treatment, and rehabilitation of injured, sick, and abandoned animals. 
-              From birds to cows, and even helping abandoned human beings — we believe every life matters.
+              From birds to all creatures in need, and even helping abandoned human beings — we believe every life matters.
             </p>
             <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
               <Link to="/about">Learn More About Us →</Link>
@@ -98,8 +98,8 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { icon: Bird, title: "Bird Rescue & Hospital", desc: "Dedicated bird hospital with specialized care for injured and sick birds." },
-              { icon: Heart, title: "Cow & Large Animal Rescue", desc: "Large ambulance service for cows and big animals with emergency medical treatment." },
-              { icon: Truck, title: "Ambulance Services", desc: "India's first bike ambulance for small animals and a large ambulance for bigger rescues." },
+              { icon: Users, title: "Humanitarian Help", desc: "Helping abandoned, elderly, and helpless human beings in need with compassion and care." },
+              { icon: Truck, title: "Ambulance Services", desc: "4 bike ambulances for quick bird and small animal rescue emergencies across the city." },
             ].map((service, i) => (
               <motion.div
                 key={i}
