@@ -54,7 +54,7 @@ const About = () => {
               </p>
               <p>
                 Today, Vidyasagar Jeev Daya Parivar Trust operates a dedicated animal shelter with a hospital, a specialized bird hospital, 
-                a fleet of <strong className="text-foreground">5 ambulances</strong> including 4 bike ambulances for small animal emergencies and 1 large ambulance for four-legged animals. 
+                a fleet of <strong className="text-foreground">6 ambulances</strong> including 5 bike ambulances for small animal emergencies and 1 large ambulance for four-legged animals. 
                 We have rescued over <strong className="text-foreground">2,00,000+ lives</strong> and continue to serve every day from 9 AM to 8 PM.
               </p>
             </div>
