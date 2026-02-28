@@ -65,13 +65,31 @@ const Contact = () => {
                 </motion.a>
               ))}
 
-              {/* Map Placeholder */}
-              <Card className="border-none bg-muted mt-6">
-                <CardContent className="p-8 text-center">
-                  <MapPin className="h-8 w-8 text-muted-foreground mx-auto mb-2" />
-                  <p className="text-muted-foreground text-sm">Map & location details coming soon</p>
-                </CardContent>
-              </Card>
+              {/* Addresses */}
+              <div className="mt-6 space-y-4">
+                <Card className="border-none bg-muted">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-3">
+                      <MapPin className="h-5 w-5 text-primary mt-0.5" />
+                      <div>
+                        <div className="font-semibold mb-1">Registered Office</div>
+                        <p className="text-muted-foreground text-sm">R-117, Flat No. 2, Khirki Ext, Malviya Nagar, New Delhi</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card className="border-none bg-muted">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-3">
+                      <MapPin className="h-5 w-5 text-primary mt-0.5" />
+                      <div>
+                        <div className="font-semibold mb-1">Bird Shelter</div>
+                        <p className="text-muted-foreground text-sm">21/5, Babarpur, Near Maujpur Metro Station, Shahdara, Delhi - 110032</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
 
             {/* Contact Form */}
