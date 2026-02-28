@@ -6,9 +6,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import StatCounter from "@/components/StatCounter";
 
 const testimonials = [
-  { name: "Rajesh Patel", text: "I called them at night for an injured bird, and they arrived within minutes. Truly dedicated people!", location: "Ahmedabad" },
-  { name: "Priya Sharma", text: "The trust has been doing incredible work for animals in our community. Their shelter is well-maintained and the animals are cared for with love.", location: "Delhi" },
-  { name: "Mahesh Joshi", text: "I've been volunteering with them for 2 years. The passion of Amit ji and Abhishek ji for animal welfare is inspiring.", location: "Surat" },
+  { name: "Rajesh Patel", text: "I called them at night for an injured bird, and they arrived within minutes. Truly dedicated people!", location: "Shahdara, Delhi" },
+  { name: "Priya Sharma", text: "The trust has been doing incredible work for animals in our community. Their shelter is well-maintained and the animals are cared for with love.", location: "Noida" },
+  { name: "Mahesh Joshi", text: "I've been volunteering with them for 2 years. The passion of Amit ji and Abhishek ji for animal welfare is inspiring.", location: "Ghaziabad" },
 ];
 
 const Index = () => {
