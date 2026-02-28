@@ -79,6 +79,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-6 border-t border-primary-foreground/20 text-center text-sm text-primary-foreground/60">
           <p>© {new Date().getFullYear()} Vidyasagar Jeev Daya Parivar Trust. All rights reserved. | Government Verified Trust</p>
+          <p className="text-[10px] text-primary-foreground/40 mt-2">Website created by Chinmay Jain</p>
         </div>
       </div>
     </footer>
