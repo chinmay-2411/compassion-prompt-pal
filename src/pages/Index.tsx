@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Heart, Users, Phone, Bird, Shield, Truck, MessageCircle, Landmark, IndianRupee } from "lucide-react";
 import upiQrCode from "@/assets/upi-qr-code.png";
+import heroBg from "@/assets/hero-bg.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import StatCounter from "@/components/StatCounter";
@@ -19,8 +20,12 @@ const Index = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="relative min-h-[80vh] flex items-center bg-gradient-to-br from-primary/10 via-background to-accent/10">
-        <div className="container py-16 md:py-24">
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={heroBg} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-background/75" />
+        </div>
+        <div className="container py-16 md:py-24 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
