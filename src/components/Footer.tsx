@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Heart, Phone, Mail, MapPin } from "lucide-react";
+import { Heart, Phone, Mail, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -70,9 +70,9 @@ const Footer = () => {
             <h3 className="font-display font-semibold text-lg mb-4">Follow Us</h3>
             <p className="text-primary-foreground/80 text-sm mb-4">Join us on social media and help spread the word about animal welfare.</p>
             <div className="flex gap-3">
-              <a href="https://www.facebook.com/vidyasagar.jeevdaya.parivar.trust" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors" aria-label="Facebook">f</a>
-              <a href="https://www.instagram.com/vidyasagarjeevdayaparivar" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors" aria-label="Instagram">in</a>
-              <a href="https://www.youtube.com/@VidyasagarJDP/featured" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors" aria-label="YouTube">yt</a>
+              <a href="https://www.facebook.com/vidyasagar.jeevdaya.parivar.trust" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors" aria-label="Facebook"><Facebook className="h-5 w-5" /></a>
+              <a href="https://www.instagram.com/vidyasagarjeevdayaparivar" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors" aria-label="Instagram"><Instagram className="h-5 w-5" /></a>
+              <a href="https://www.youtube.com/@VidyasagarJDP/featured" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors" aria-label="YouTube"><Youtube className="h-5 w-5" /></a>
             </div>
           </div>
         </div>
