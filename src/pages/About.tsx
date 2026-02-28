@@ -43,8 +43,12 @@ const About = () => {
             <h2 className="font-display text-3xl font-bold mb-6">Our Story</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
+                Vidyasagar Jeev Daya Parivar Trust is a Delhi-based non-profit organization dedicated to rescuing injured birds, animals, and vulnerable humans.
+                With a compassionate and rapid-response team, we operate a 12-hour rescue helpline to assist cases across Delhi and surrounding areas.
+              </p>
+              <p>
                 In 2018, <strong className="text-foreground">Amit Jain</strong> and <strong className="text-foreground">Abhishek Jain</strong> witnessed the plight of 
-                injured and abandoned animals on the streets of India. Moved by compassion and a deep belief in the sanctity of all life, 
+                injured and abandoned animals on the streets. Moved by compassion and a deep belief in the sanctity of all life, 
                 they began rescuing animals with nothing but their own vehicles and personal savings.
               </p>
               <p>
@@ -53,8 +57,9 @@ const About = () => {
                 as a government-verified organization.
               </p>
               <p>
-                Today, Vidyasagar Jeev Daya Parivar Trust operates a dedicated animal shelter with a hospital, a specialized bird hospital, 
-                a fleet of <strong className="text-foreground">6 ambulances</strong> including 5 bike ambulances for small animal emergencies and 1 large ambulance for four-legged animals. 
+                Today, the trust operates a dedicated animal shelter with a hospital in <strong className="text-foreground">Morta Village, Ghaziabad</strong>, 
+                a specialized bird hospital in <strong className="text-foreground">Babarpur, Shahdara</strong>, 
+                and a fleet of <strong className="text-foreground">6 ambulances</strong> including 5 bike ambulances for bird emergencies and 1 large ambulance for cows and big animals. 
                 We have rescued over <strong className="text-foreground">2,00,000+ lives</strong> and continue to serve every day from 9 AM to 8 PM.
               </p>
             </div>
@@ -101,9 +106,9 @@ const About = () => {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { icon: Target, title: "Our Mission", text: "To rescue, rehabilitate, and protect every animal in need — regardless of species, size, or condition. We also extend help to abandoned and helpless human beings." },
-              { icon: Eye, title: "Our Vision", text: "A world where no animal suffers on the streets, where compassion guides action, and every living being has access to care and shelter." },
-              { icon: Award, title: "Our Values", text: "Compassion for all living beings, transparency in operations, community-driven service, and unwavering dedication to saving lives." },
+              { icon: Target, title: "Our Mission", text: "To protect and nurture vulnerable lives — injured birds, animals, and humans — through timely rescue, compassionate care, and community education. We strive to create a world where every living being is treated with kindness and respect." },
+              { icon: Eye, title: "Our Vision", text: "To expand across all of India, delivering fast, free, and reliable rescue services to protect every injured bird, animal, and human. We aim to build a compassionate nation where no living being suffers alone, ensuring safety, care, and dignity for all." },
+              { icon: Award, title: "Our Values", text: "Compassion for all living beings, transparency in operations, community-driven service, and unwavering dedication to saving lives. Environmental harmony that sustains life for generations to come." },
             ].map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}>
                 <Card className="h-full border-none bg-card">

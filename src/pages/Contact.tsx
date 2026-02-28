@@ -42,7 +42,7 @@ const Contact = () => {
                 { icon: Phone, label: "Phone", value: "8866591008", href: "tel:+918866591008" },
                 { icon: Phone, label: "Phone", value: "9716565758", href: "tel:+919716565758" },
                 { icon: MessageCircle, label: "WhatsApp", value: "Chat with us", href: "https://wa.me/918866591008" },
-                { icon: Mail, label: "Email", value: "info@vjdptrust.org", href: "mailto:info@vjdptrust.org" },
+                { icon: Mail, label: "Email", value: "vidyasagarjeevdayaparivar@gmail.com", href: "mailto:vidyasagarjeevdayaparivar@gmail.com" },
               ].map((item, i) => (
                 <motion.a
                   key={i}
@@ -85,6 +85,17 @@ const Contact = () => {
                       <div>
                         <div className="font-semibold mb-1">Bird Shelter</div>
                         <p className="text-muted-foreground text-sm">21/5, Babarpur, Near Maujpur Metro Station, Shahdara, Delhi - 110032</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card className="border-none bg-muted">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-3">
+                      <MapPin className="h-5 w-5 text-primary mt-0.5" />
+                      <div>
+                        <div className="font-semibold mb-1">Animal Hospital & Shelter</div>
+                        <p className="text-muted-foreground text-sm">Morta Village, Ghaziabad</p>
                       </div>
                     </div>
                   </CardContent>
