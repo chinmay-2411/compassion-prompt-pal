@@ -64,7 +64,7 @@ const Footer = () => {
                 <div className="text-primary-foreground/80">
                   <div className="font-medium text-primary-foreground">Registered Office:</div>
                   R-117, Khirki Ext, Malviya Nagar, New Delhi
-                  <div className="font-medium text-primary-foreground mt-2">Bird Shelter:</div>
+                  <div className="font-medium text-primary-foreground mt-2">Bird Hospital:</div>
                   21/5, Babarpur, Near Maujpur Metro Station, Shahdara, Delhi - 110032
                   <div className="font-medium text-primary-foreground mt-2">Animal Hospital & Shelter:</div>
                   Morta Village, Ghaziabad
