@@ -11,6 +11,7 @@ import aajTakImg from "@/assets/gallery/gallery-9.jpg";
 import jagranImg from "@/assets/gallery/gallery-14.jpg";
 import officialsImg from "@/assets/gallery/gallery-11.jpg";
 import shelterImg from "@/assets/gallery/gallery-7.jpg";
+import humanitarianImg from "@/assets/humanitarian-help.jpg";
 
 const services = [
   {
@@ -52,7 +53,7 @@ const services = [
   {
     icon: Users,
     title: "Humanitarian Help",
-    image: officialsImg,
+    image: humanitarianImg,
     desc: "Our compassion extends beyond animals. We provide assistance to abandoned, elderly, and helpless human beings in need — offering food, medical help, and support to those forgotten by society.",
     details: [
       "Food distribution to homeless and abandoned individuals",
