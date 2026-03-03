@@ -125,7 +125,7 @@ const OurWork = () => {
             >
               <div className="lg:w-1/2">
                 <div className="rounded-2xl overflow-hidden shadow-lg">
-                  <img src={s.image} alt={s.title} className="w-full h-64 md:h-80 object-cover" />
+                  <img src={s.image} alt={s.title} className="w-full h-64 md:h-80 object-cover" loading="lazy" />
                 </div>
               </div>
               <div className="lg:w-1/2">
@@ -190,7 +190,7 @@ const OurWork = () => {
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}>
                 <Card className="h-full border-none bg-card overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="aspect-[4/3] overflow-hidden">
-                    <img src={m.image} alt={m.outlet} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                    <img src={m.image} alt={m.outlet} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
                   </div>
                   <CardContent className="p-6">
                     <div className="flex items-center gap-2 mb-3">

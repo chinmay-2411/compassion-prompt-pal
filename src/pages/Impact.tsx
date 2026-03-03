@@ -111,7 +111,7 @@ const GallerySection = ({ images }: { images: { src: string; alt: string }[] }) 
                 className="aspect-square rounded-lg overflow-hidden cursor-pointer"
                 onClick={() => setSelected(i)}
               >
-                <img src={img.src} alt={img.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                <img src={img.src} alt={img.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
               </motion.div>
             ))}
           </div>
