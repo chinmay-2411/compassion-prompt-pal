@@ -80,7 +80,7 @@ const About = () => {
                     <div className={`flex flex-col ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
                       {/* Photo */}
                       <div className="md:w-1/3 relative">
-                        <img src={founder.photo} alt={founder.name} className="w-full h-64 md:h-full object-cover" />
+                        <img src={founder.photo} alt={founder.name} className="w-full h-64 md:h-full object-cover" loading="lazy" />
                       </div>
                       {/* Info */}
                       <div className="md:w-2/3 p-8 md:p-10 flex flex-col justify-center">

@@ -22,7 +22,7 @@ const Index = () => {
       {/* Hero */}
       <section className="relative min-h-[80vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroBg} alt="" className="w-full h-full object-cover" />
+          <img src={heroBg} alt="" className="w-full h-full object-cover" loading="eager" fetchPriority="high" />
           <div className="absolute inset-0 bg-background/50" />
         </div>
         <div className="container py-16 md:py-24 relative z-10">
@@ -199,7 +199,7 @@ const Index = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-2xl mx-auto">
               <div className="bg-card rounded-xl p-6 border border-primary/20 flex flex-col items-center">
                 <span className="font-display font-semibold mb-3">Scan & Pay via UPI</span>
-                <img src={upiQrCode} alt="UPI QR Code for donations" className="w-48 h-48 object-contain mb-2" />
+                <img src={upiQrCode} alt="UPI QR Code for donations" className="w-48 h-48 object-contain mb-2" loading="lazy" />
                 <p className="text-xs text-muted-foreground text-center">Scan with any UPI app — Google Pay, PhonePe, Paytm, etc.</p>
               </div>
               <div className="bg-card rounded-xl p-6 border border-primary/20">

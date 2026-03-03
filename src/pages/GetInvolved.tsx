@@ -78,7 +78,7 @@ const GetInvolved = () => {
                      {/* UPI QR Code */}
                      <div className="bg-background rounded-lg p-4 border border-primary/20 mb-4 text-center">
                        <span className="font-semibold text-sm block mb-2">Scan & Pay via UPI</span>
-                       <img src={upiQrCode} alt="UPI QR Code for donations" className="w-36 h-36 object-contain mx-auto mb-1" />
+                       <img src={upiQrCode} alt="UPI QR Code for donations" className="w-36 h-36 object-contain mx-auto mb-1" loading="lazy" />
                        <p className="text-[11px] text-muted-foreground">Google Pay, PhonePe, Paytm, etc.</p>
                      </div>
 
