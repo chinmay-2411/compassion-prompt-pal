@@ -70,7 +70,7 @@ const Contact = () => {
               <div className="mt-6 space-y-4">
                 {[
                   { title: "Registered Office", address: "R-117, Khirki Ext, Malviya Nagar, New Delhi" },
-                  { title: "Bird Shelter", address: "21/5, Babarpur, Near Maujpur Metro Station, Shahdara, Delhi - 110032" },
+                  { title: "Bird Hospital", address: "21/5, Babarpur, Near Maujpur Metro Station, Shahdara, Delhi - 110032" },
                   { title: "Animal Hospital & Shelter", address: "Morta Village, Ghaziabad" },
                 ].map((loc, i) => (
                   <Card key={i} className="border bg-muted/30">
