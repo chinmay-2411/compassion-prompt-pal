@@ -74,7 +74,7 @@ const Index = () => {
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <StatCounter end={9} suffix="+" label="Years of Service" />
+            <StatCounter end={8} suffix="+" label="Years of Service" />
             <StatCounter end={200000} suffix="+" label="Lives Rescued" />
             <StatCounter end={2} label="Shelters & Hospitals" />
             <StatCounter end={6} label="Ambulances" />
