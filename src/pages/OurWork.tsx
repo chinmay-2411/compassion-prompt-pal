@@ -3,7 +3,7 @@ import { Bird, Heart, Home, Users, Truck, Bike, Clock, Newspaper, Tv } from "luc
 import { Card, CardContent } from "@/components/ui/card";
 
 // Service photos from gallery
-import birdRescueImg from "@/assets/gallery/gallery-12.jpg";
+import birdRescueImg from "@/assets/bird-rescue.jpg";
 import bikeAmbulanceImg from "@/assets/gallery/gallery-5.jpg";
 import communityImg from "@/assets/gallery/gallery-10.jpg";
 import aniNewsImg from "@/assets/gallery/gallery-13.jpg";
