@@ -1,55 +1,69 @@
 
 
-# Vidyasagar Jeev Daya Parivar Trust — NGO Website
+# Website Design & Layout Improvement Plan
 
-## Page Structure
+## Overview
+A comprehensive visual and UX upgrade across all pages to make the website feel more polished, modern, and professional while maintaining the earthy, compassionate NGO brand identity.
 
-### 1. Home Page
-- Hero section with emotional tagline: "Saving Lives. Spreading Compassion. Protecting the Voiceless."
-- Animated stat counters: 7+ years of service, 2,00,000+ lives rescued, 2 shelters, 2 ambulances
-- Short trust introduction paragraph
-- Three CTA buttons: Donate Now, Become a Volunteer, Report an Animal in Need
-- Testimonials slider section
-- Floating WhatsApp chat button (8866591008)
+---
 
-### 2. About Us Page
-- Origin story of the trust (founded 2018, registered 2022)
-- Co-founders: Amit Jain & Abhishek Jain
-- Mission, Vision & Values cards
-- Government verification badge/details
+## 1. Header Enhancement
+- Add a subtle shadow on scroll for depth
+- Smooth mobile menu animation (slide down instead of instant appear)
+- Make the logo slightly larger on desktop for brand presence
 
-### 3. Our Work Page
-- Six service cards with icons: Bird Rescue & Hospital, Cow & Large Animal Rescue, Small Animal Emergency, Shelter & Medical Treatment, Humanitarian Help, Ambulance Services
-- Bike Ambulance and Large Ambulance feature highlights
-- Operating hours/availability info
+## 2. Homepage (Index) Improvements
+- **Hero section**: Add a subtle dark gradient overlay on the background image for better text contrast and readability
+- **CTA buttons**: Reduce from 4 buttons to a cleaner 2-row layout with better spacing
+- **Services cards**: Add a subtle left border accent color and hover lift effect
+- **Testimonials**: Add quotation marks styling and a subtle card border for definition
+- **Donation section**: Better visual hierarchy with cleaner card separation
 
-### 4. Impact Page
-- Large rescue counter (2,00,000+)
-- Before/after story cards (placeholder content)
-- Photo gallery grid
+## 3. About Page Polish
+- Add subtle decorative divider elements between sections
+- Founder cards: add a subtle gradient overlay on photos for depth
+- Mission/Vision/Values cards: add top colored border for visual interest
 
-### 5. Get Involved Page
-- Volunteer signup form (name, email, phone, message)
-- Donation section with CTA
-- Corporate partnership inquiry section
+## 4. Our Work Page
+- Add a subtle colored tag/badge above each service title
+- Improve spacing between image and text content
+- Add hover effect on service images (subtle zoom)
 
-### 6. Contact Us Page
-- Phone: 8866591008, 9716565758
-- WhatsApp link
-- Simple contact form (name, email, subject, message)
-- Location/map placeholder
+## 5. Impact Page
+- **Gallery section**: Add rounded corners with consistent aspect ratios and subtle hover overlay with the image caption
+- **Rescue Stories cards**: Add a small icon or emoji for each story type and a left accent border
+- Improve stat counter section with individual stat cards instead of plain text
 
-## Design & UX
-- Color palette: earthy greens, warm browns, soft yellows, white backgrounds
-- Large hero images with emotional animal photography (placeholder images)
-- Clean typography, mobile-first responsive design
-- Sticky navigation header with logo and page links
-- Footer with social media links, quick links, and contact info
-- WhatsApp floating button on all pages
-- Smooth scroll animations for stat counters and sections
+## 6. Get Involved & Contact Pages
+- Better form styling with focus states and floating labels feel
+- Add subtle card backgrounds behind form sections
+- Improve spacing and visual separation
 
-## Navigation
-- Desktop: horizontal navbar with all pages
-- Mobile: hamburger menu
-- Sticky header on scroll
+## 7. Footer Refinement
+- Add a subtle wave or curved divider at the top of the footer
+- Better column alignment and spacing on mobile
+
+## 8. Global Improvements
+- **Section transitions**: Add subtle background pattern or texture to alternating sections for visual rhythm
+- **Cards**: Consistent subtle border + shadow across all pages (currently some have `border-none` which looks flat)
+- **Buttons**: More consistent hover states with smooth transitions
+- **Typography**: Slightly increase line-height on body text for readability
+- **Spacing**: Normalize section padding across pages for consistency
+
+---
+
+## Technical Details
+
+### Files to modify:
+1. **`src/components/Header.tsx`** - Scroll shadow, mobile menu animation
+2. **`src/pages/Index.tsx`** - Hero overlay, card styles, button layout, testimonial styling
+3. **`src/pages/About.tsx`** - Card borders, section dividers
+4. **`src/pages/OurWork.tsx`** - Image hover, tags, spacing
+5. **`src/pages/Impact.tsx`** - Gallery hover overlays, stat cards, story card accents
+6. **`src/pages/GetInvolved.tsx`** - Form styling, card backgrounds
+7. **`src/pages/Contact.tsx`** - Form styling, card spacing
+8. **`src/components/Footer.tsx`** - Top divider, mobile spacing
+9. **`src/index.css`** - Global typography and spacing improvements
+
+### No new dependencies needed -- all improvements use existing Tailwind classes and Framer Motion.
 
