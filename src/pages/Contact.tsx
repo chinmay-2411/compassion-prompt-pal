@@ -32,12 +32,13 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-20">
         <div className="container max-w-5xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Info */}
             <div className="space-y-6">
               <h2 className="font-display text-2xl font-bold mb-4">Get in Touch</h2>
+              <div className="w-16 h-1 bg-primary/30 rounded-full mb-6" />
               {[
                 { icon: Phone, label: "Phone", value: "8866591008", href: "tel:+918866591008" },
                 { icon: Phone, label: "Phone", value: "9716565758", href: "tel:+919716565758" },
@@ -53,9 +54,9 @@ const Contact = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex items-center gap-4 p-4 rounded-lg hover:bg-muted transition-colors"
+                  className="flex items-center gap-4 p-4 rounded-xl border border-transparent hover:border-border hover:bg-muted/50 transition-all"
                 >
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <item.icon className="h-5 w-5 text-primary" />
                   </div>
                   <div>
@@ -67,52 +68,40 @@ const Contact = () => {
 
               {/* Addresses */}
               <div className="mt-6 space-y-4">
-                <Card className="border-none bg-muted">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-3">
-                      <MapPin className="h-5 w-5 text-primary mt-0.5" />
-                      <div>
-                        <div className="font-semibold mb-1">Registered Office</div>
-                        <p className="text-muted-foreground text-sm">R-117, Khirki Ext, Malviya Nagar, New Delhi</p>
+                {[
+                  { title: "Registered Office", address: "R-117, Khirki Ext, Malviya Nagar, New Delhi" },
+                  { title: "Bird Shelter", address: "21/5, Babarpur, Near Maujpur Metro Station, Shahdara, Delhi - 110032" },
+                  { title: "Animal Hospital & Shelter", address: "Morta Village, Ghaziabad" },
+                ].map((loc, i) => (
+                  <Card key={i} className="border bg-muted/30">
+                    <CardContent className="p-5">
+                      <div className="flex items-start gap-3">
+                        <MapPin className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                        <div>
+                          <div className="font-semibold mb-1">{loc.title}</div>
+                          <p className="text-muted-foreground text-sm">{loc.address}</p>
+                        </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card className="border-none bg-muted">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-3">
-                      <MapPin className="h-5 w-5 text-primary mt-0.5" />
-                      <div>
-                        <div className="font-semibold mb-1">Bird Shelter</div>
-                        <p className="text-muted-foreground text-sm">21/5, Babarpur, Near Maujpur Metro Station, Shahdara, Delhi - 110032</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card className="border-none bg-muted">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-3">
-                      <MapPin className="h-5 w-5 text-primary mt-0.5" />
-                      <div>
-                        <div className="font-semibold mb-1">Animal Hospital & Shelter</div>
-                        <p className="text-muted-foreground text-sm">Morta Village, Ghaziabad</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </div>
 
             {/* Contact Form */}
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <h2 className="font-display text-2xl font-bold mb-6">Send a Message</h2>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <Input placeholder="Your Name *" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} maxLength={100} required />
-                <Input type="email" placeholder="Email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} maxLength={255} />
-                <Input placeholder="Subject" value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} maxLength={200} />
-                <Textarea placeholder="Your Message *" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} maxLength={1000} rows={5} required />
-                <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">Send Message</Button>
-              </form>
+              <Card className="border">
+                <CardContent className="p-8">
+                  <h2 className="font-display text-2xl font-bold mb-6">Send a Message</h2>
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <Input placeholder="Your Name *" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} maxLength={100} required className="bg-background focus:ring-2 focus:ring-primary/20" />
+                    <Input type="email" placeholder="Email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} maxLength={255} className="bg-background focus:ring-2 focus:ring-primary/20" />
+                    <Input placeholder="Subject" value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} maxLength={200} className="bg-background focus:ring-2 focus:ring-primary/20" />
+                    <Textarea placeholder="Your Message *" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} maxLength={1000} rows={5} required className="bg-background focus:ring-2 focus:ring-primary/20" />
+                    <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">Send Message</Button>
+                  </form>
+                </CardContent>
+              </Card>
             </motion.div>
           </div>
         </div>

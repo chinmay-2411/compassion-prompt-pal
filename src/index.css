@@ -92,7 +92,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-background text-foreground font-body leading-relaxed;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -104,4 +104,9 @@
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Section divider */
+.section-divider {
+  @apply w-16 h-1 bg-primary/30 rounded-full mx-auto;
 }

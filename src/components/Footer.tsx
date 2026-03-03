@@ -3,9 +3,15 @@ import { Heart, Phone, Mail, MapPin, Facebook, Instagram, Youtube } from "lucide
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-primary text-primary-foreground relative">
+      {/* Curved divider */}
+      <div className="absolute top-0 left-0 right-0 -translate-y-[1px]">
+        <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-8 md:h-12" preserveAspectRatio="none">
+          <path d="M0 48h1440V24C1200 0 240 0 0 24v24z" fill="hsl(var(--primary))" />
+        </svg>
+      </div>
+      <div className="container py-14 md:py-18 pt-16 md:pt-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -42,19 +48,19 @@ const Footer = () => {
             <h3 className="font-display font-semibold text-lg mb-4">Contact Us</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-accent" />
+                <Phone className="h-4 w-4 text-accent shrink-0" />
                 <a href="tel:+918866591008" className="text-primary-foreground/80 hover:text-accent transition-colors">8866591008</a>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-accent" />
+                <Phone className="h-4 w-4 text-accent shrink-0" />
                 <a href="tel:+919716565758" className="text-primary-foreground/80 hover:text-accent transition-colors">9716565758</a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-accent" />
-                <a href="mailto:vidyasagarjeevdayaparivar@gmail.com" className="text-primary-foreground/80 hover:text-accent transition-colors">vidyasagarjeevdayaparivar@gmail.com</a>
+                <Mail className="h-4 w-4 text-accent shrink-0" />
+                <a href="mailto:vidyasagarjeevdayaparivar@gmail.com" className="text-primary-foreground/80 hover:text-accent transition-colors break-all">vidyasagarjeevdayaparivar@gmail.com</a>
               </li>
               <li className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 text-accent mt-0.5" />
+                <MapPin className="h-4 w-4 text-accent mt-0.5 shrink-0" />
                 <div className="text-primary-foreground/80">
                   <div className="font-medium text-primary-foreground">Registered Office:</div>
                   R-117, Khirki Ext, Malviya Nagar, New Delhi

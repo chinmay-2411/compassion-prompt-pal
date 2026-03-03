@@ -37,10 +37,11 @@ const About = () => {
       </section>
 
       {/* Story */}
-      <section className="py-16">
+      <section className="py-20">
         <div className="container max-w-4xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <h2 className="font-display text-3xl font-bold mb-6">Our Story</h2>
+            <h2 className="font-display text-3xl font-bold mb-4">Our Story</h2>
+            <div className="w-16 h-1 bg-primary/30 rounded-full mb-6" />
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 Vidyasagar Jeev Daya Parivar Trust is a Delhi-based non-profit organization dedicated to rescuing injured birds, animals, and vulnerable humans.
@@ -68,19 +69,21 @@ const About = () => {
       </section>
 
       {/* Founders */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-20 bg-muted/50">
         <div className="container">
           <h2 className="font-display text-3xl font-bold text-center mb-4">Our Co-Founders</h2>
+          <div className="section-divider mb-4" />
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">The hearts and hands behind every rescue, every shelter, and every life saved.</p>
           <div className="space-y-12 max-w-4xl mx-auto">
             {founders.map((founder, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.2, duration: 0.6 }}>
-                <Card className="border-none overflow-hidden">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow">
                   <CardContent className="p-0">
                     <div className={`flex flex-col ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
                       {/* Photo */}
                       <div className="md:w-1/3 relative">
                         <img src={founder.photo} alt={founder.name} className="w-full h-64 md:h-full object-cover" loading="lazy" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                       </div>
                       {/* Info */}
                       <div className="md:w-2/3 p-8 md:p-10 flex flex-col justify-center">
@@ -102,16 +105,16 @@ const About = () => {
       </section>
 
       {/* Mission Vision Values */}
-      <section className="py-16">
+      <section className="py-20">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { icon: Target, title: "Our Mission", text: "To protect and nurture vulnerable lives — injured birds, animals, and humans — through timely rescue, compassionate care, and community education. We strive to create a world where every living being is treated with kindness and respect." },
-              { icon: Eye, title: "Our Vision", text: "To expand across all of India, delivering fast, free, and reliable rescue services to protect every injured bird, animal, and human. We aim to build a compassionate nation where no living being suffers alone, ensuring safety, care, and dignity for all." },
-              { icon: Award, title: "Our Values", text: "Compassion for all living beings, transparency in operations, community-driven service, and unwavering dedication to saving lives. Environmental harmony that sustains life for generations to come." },
+              { icon: Target, title: "Our Mission", color: "border-t-primary", text: "To protect and nurture vulnerable lives — injured birds, animals, and humans — through timely rescue, compassionate care, and community education. We strive to create a world where every living being is treated with kindness and respect." },
+              { icon: Eye, title: "Our Vision", color: "border-t-accent", text: "To expand across all of India, delivering fast, free, and reliable rescue services to protect every injured bird, animal, and human. We aim to build a compassionate nation where no living being suffers alone, ensuring safety, care, and dignity for all." },
+              { icon: Award, title: "Our Values", color: "border-t-secondary", text: "Compassion for all living beings, transparency in operations, community-driven service, and unwavering dedication to saving lives. Environmental harmony that sustains life for generations to come." },
             ].map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}>
-                <Card className="h-full border-none bg-card">
+                <Card className={`h-full border-t-4 ${item.color} hover:shadow-lg transition-shadow`}>
                   <CardContent className="p-8 text-center">
                     <div className="w-14 h-14 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-4">
                       <item.icon className="h-7 w-7 text-accent-foreground" />
