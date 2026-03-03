@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Bird, Heart, Home, Users, Truck, Bike, Clock, Newspaper, Tv } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 // Service photos from gallery
 import birdRescueImg from "@/assets/bird-rescue.jpg";
@@ -9,7 +10,6 @@ import communityImg from "@/assets/gallery/gallery-10.jpg";
 import aniNewsImg from "@/assets/gallery/gallery-13.jpg";
 import aajTakImg from "@/assets/gallery/gallery-9.jpg";
 import jagranImg from "@/assets/gallery/gallery-14.jpg";
-import officialsImg from "@/assets/gallery/gallery-11.jpg";
 import shelterImg from "@/assets/gallery/gallery-7.jpg";
 import humanitarianImg from "@/assets/humanitarian-help.jpg";
 
@@ -17,6 +17,7 @@ const services = [
   {
     icon: Bird,
     title: "Bird Rescue & Hospital",
+    tag: "Core Service",
     image: birdRescueImg,
     desc: "Our dedicated bird hospital is the heart of our operations. Located at Babarpur, Shahdara, the facility provides specialized medical care, surgery, and rehabilitation for injured, sick, and orphaned birds of all species.",
     details: [
@@ -29,6 +30,7 @@ const services = [
   {
     icon: Heart,
     title: "Cow & Large Animal Rescue",
+    tag: "Rescue",
     image: communityImg,
     desc: "We conduct emergency rescue operations for cows, bulls, and other large animals across Delhi NCR. Our large ambulance is specially designed to safely transport big animals to our shelter for treatment and care.",
     details: [
@@ -41,6 +43,7 @@ const services = [
   {
     icon: Home,
     title: "Shelter & Medical Treatment",
+    tag: "Care",
     image: shelterImg,
     desc: "Our shelter provides a safe haven for rescued animals with proper medical facilities, nutritious food, clean water, and a caring environment. Animals stay until they are fully recovered and ready for release or adoption.",
     details: [
@@ -53,6 +56,7 @@ const services = [
   {
     icon: Users,
     title: "Humanitarian Help",
+    tag: "Social",
     image: humanitarianImg,
     desc: "Our compassion extends beyond animals. We provide assistance to abandoned, elderly, and helpless human beings in need — offering food, medical help, and support to those forgotten by society.",
     details: [
@@ -65,6 +69,7 @@ const services = [
   {
     icon: Truck,
     title: "Ambulance Services",
+    tag: "Emergency",
     image: bikeAmbulanceImg,
     desc: "We operate India's innovative bike ambulance service for bird rescue along with a large vehicle ambulance for cows and big animals — ensuring rapid emergency response across Delhi NCR.",
     details: [
@@ -113,8 +118,8 @@ const OurWork = () => {
       </section>
 
       {/* Detailed Services */}
-      <section className="py-16">
-        <div className="container space-y-16">
+      <section className="py-20">
+        <div className="container space-y-20">
           {services.map((s, i) => (
             <motion.div
               key={i}
@@ -122,14 +127,15 @@ const OurWork = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-8 items-center`}
+              className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-10 items-center`}
             >
               <div className="lg:w-1/2">
-                <div className="rounded-2xl overflow-hidden shadow-lg">
-                  <img src={s.image} alt={s.title} className="w-full h-72 md:h-96 object-cover object-top" loading="lazy" />
+                <div className="rounded-2xl overflow-hidden shadow-lg group">
+                  <img src={s.image} alt={s.title} className="w-full h-72 md:h-96 object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
               </div>
               <div className="lg:w-1/2">
+                <Badge variant="secondary" className="mb-3">{s.tag}</Badge>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                     <s.icon className="h-6 w-6 text-primary" />
@@ -152,13 +158,14 @@ const OurWork = () => {
       </section>
 
       {/* Ambulance Highlights */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-20 bg-muted/50">
         <div className="container">
-          <h2 className="font-display text-3xl font-bold text-center mb-12">Our Ambulance Fleet</h2>
-          <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">We operate a fleet of <strong className="text-foreground">6 ambulances</strong> — 5 bike ambulances for quick bird rescues and 1 large ambulance for cows and big animals.</p>
+          <h2 className="font-display text-3xl font-bold text-center mb-4">Our Ambulance Fleet</h2>
+          <div className="section-divider mb-4" />
+          <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">We operate a fleet of <strong className="text-foreground">6 ambulances</strong> — 5 bike ambulances for quick bird rescues and 1 large ambulance for cows and big animals.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <Card className="border-none bg-card h-full">
+              <Card className="h-full hover:shadow-lg transition-shadow">
                 <CardContent className="p-8 text-center">
                   <Bike className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h3 className="font-display text-xl font-semibold mb-3">5 Bike Ambulances</h3>
@@ -167,7 +174,7 @@ const OurWork = () => {
               </Card>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <Card className="border-none bg-card h-full">
+              <Card className="h-full hover:shadow-lg transition-shadow">
                 <CardContent className="p-8 text-center">
                   <Truck className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h3 className="font-display text-xl font-semibold mb-3">1 Large Ambulance</h3>
@@ -180,16 +187,17 @@ const OurWork = () => {
       </section>
 
       {/* Media & News Coverage */}
-      <section className="py-16">
+      <section className="py-20">
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="font-display text-3xl font-bold text-center mb-4">Media & News Coverage</h2>
+            <div className="section-divider mb-4" />
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">Our work has been recognized and covered by leading national media outlets.</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {mediaFeatures.map((m, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}>
-                <Card className="h-full border-none bg-card overflow-hidden hover:shadow-lg transition-shadow">
+                <Card className="h-full overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1 duration-300">
                   <div className="aspect-[4/3] overflow-hidden">
                     <img src={m.image} alt={m.outlet} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
                   </div>

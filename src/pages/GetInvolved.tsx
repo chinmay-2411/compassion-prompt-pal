@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Heart, Users, Building2, Landmark, IndianRupee } from "lucide-react";
+import { Heart, Users, Building2, Landmark } from "lucide-react";
 import upiQrCode from "@/assets/upi-qr-code.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -33,27 +33,31 @@ const GetInvolved = () => {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-20">
         <div className="container max-w-5xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Volunteer Form */}
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <h2 className="font-display text-2xl font-bold mb-6 flex items-center gap-2">
-                <Users className="h-6 w-6 text-primary" /> Become a Volunteer
-              </h2>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <Input placeholder="Your Name *" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} maxLength={100} required />
-                <Input type="email" placeholder="Email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} maxLength={255} />
-                <Input type="tel" placeholder="Phone Number *" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} maxLength={15} required />
-                <Textarea placeholder="Why do you want to volunteer? (optional)" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} maxLength={1000} />
-                <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">Submit Volunteer Application</Button>
-              </form>
+              <Card className="border">
+                <CardContent className="p-8">
+                  <h2 className="font-display text-2xl font-bold mb-6 flex items-center gap-2">
+                    <Users className="h-6 w-6 text-primary" /> Become a Volunteer
+                  </h2>
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <Input placeholder="Your Name *" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} maxLength={100} required className="bg-background focus:ring-2 focus:ring-primary/20" />
+                    <Input type="email" placeholder="Email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} maxLength={255} className="bg-background focus:ring-2 focus:ring-primary/20" />
+                    <Input type="tel" placeholder="Phone Number *" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} maxLength={15} required className="bg-background focus:ring-2 focus:ring-primary/20" />
+                    <Textarea placeholder="Why do you want to volunteer? (optional)" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} maxLength={1000} className="bg-background focus:ring-2 focus:ring-primary/20" />
+                    <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">Submit Volunteer Application</Button>
+                  </form>
+                </CardContent>
+              </Card>
             </motion.div>
 
             {/* Donate + Corporate */}
             <div className="space-y-8">
               <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-                <Card className="border-none bg-accent/10">
+                <Card className="border border-primary/20 bg-accent/5">
                   <CardContent className="p-8">
                     <Heart className="h-10 w-10 text-primary mb-4" />
                     <h3 className="font-display text-xl font-semibold mb-3">Donate</h3>
@@ -68,7 +72,7 @@ const GetInvolved = () => {
                         { amount: "₹5,100", label: "Medicine" },
                         { amount: "₹11,000", label: "All Support" },
                       ].map((tier, i) => (
-                        <div key={i} className="bg-background rounded-lg p-3 text-center border border-primary/20">
+                        <div key={i} className="bg-background rounded-lg p-3 text-center border border-primary/20 hover:border-primary/40 transition-colors">
                           <div className="font-bold text-primary text-sm">{tier.amount}</div>
                           <div className="text-[11px] text-muted-foreground">{tier.label}</div>
                         </div>
@@ -105,7 +109,7 @@ const GetInvolved = () => {
               </motion.div>
 
               <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}>
-                <Card className="border-none bg-primary/5">
+                <Card className="border border-secondary/20 bg-primary/5">
                   <CardContent className="p-8">
                     <Building2 className="h-10 w-10 text-secondary mb-4" />
                     <h3 className="font-display text-xl font-semibold mb-3">Corporate Partnership</h3>

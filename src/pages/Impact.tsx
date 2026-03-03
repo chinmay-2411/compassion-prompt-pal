@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Bird, Heart, Truck, Sparkles } from "lucide-react";
 import StatCounter from "@/components/StatCounter";
 import gallery1 from "@/assets/gallery/gallery-1.jpg";
 import gallery2 from "@/assets/gallery/gallery-2.jpg";
@@ -17,7 +17,6 @@ import gallery11 from "@/assets/gallery/gallery-11.jpg";
 import gallery12 from "@/assets/gallery/gallery-12.jpg";
 import gallery13 from "@/assets/gallery/gallery-13.jpg";
 
-
 const galleryImages = [
   { src: gallery1, alt: "Meeting with former President of India" },
   { src: gallery2, alt: "Presenting trust work to dignitaries" },
@@ -32,14 +31,13 @@ const galleryImages = [
   { src: gallery11, alt: "Meeting with officials" },
   { src: gallery12, alt: "Bird rescue in action" },
   { src: gallery13, alt: "ANI News interview about bike ambulance" },
-  
 ];
 
 const stories = [
-  { title: "Injured Peacock Rescue", desc: "A beautiful peacock was found injured near a construction site in Shahdara. Our bike ambulance team carefully rescued it, treated its wounds at our bird hospital, and released it back into a safe habitat.", tag: "Peacock Rescue" },
-  { title: "Injured Eagle Recovery", desc: "A majestic eagle was found with an injured wing in a village. Our bird hospital team performed surgery and rehabilitation. The eagle was released back into the wild.", tag: "Bird Rescue" },
-  { title: "Cow Accident Rescue", desc: "A cow was hit by a vehicle on a busy road. Our large ambulance team reached the spot within minutes, provided first aid, and transported her to our shelter for treatment.", tag: "Cow Rescue" },
-  { title: "Horse Rescued from Neglect", desc: "An abandoned and malnourished horse was found tied near a railway track. Our team rescued it, provided veterinary care, proper nutrition, and nursed it back to health at our shelter.", tag: "Horse Rescue" },
+  { title: "Injured Peacock Rescue", desc: "A beautiful peacock was found injured near a construction site in Shahdara. Our bike ambulance team carefully rescued it, treated its wounds at our bird hospital, and released it back into a safe habitat.", tag: "Peacock Rescue", icon: Bird },
+  { title: "Injured Eagle Recovery", desc: "A majestic eagle was found with an injured wing in a village. Our bird hospital team performed surgery and rehabilitation. The eagle was released back into the wild.", tag: "Bird Rescue", icon: Bird },
+  { title: "Cow Accident Rescue", desc: "A cow was hit by a vehicle on a busy road. Our large ambulance team reached the spot within minutes, provided first aid, and transported her to our shelter for treatment.", tag: "Cow Rescue", icon: Heart },
+  { title: "Horse Rescued from Neglect", desc: "An abandoned and malnourished horse was found tied near a railway track. Our team rescued it, provided veterinary care, proper nutrition, and nursed it back to health at our shelter.", tag: "Horse Rescue", icon: Sparkles },
 ];
 
 const Impact = () => {
@@ -54,23 +52,39 @@ const Impact = () => {
         </div>
       </section>
 
-      {/* Big Counter */}
-      <section className="py-16 bg-primary text-primary-foreground">
-        <div className="container text-center">
-          <StatCounter end={200000} suffix="+" label="Lives Rescued Since 2018" />
+      {/* Stat Cards */}
+      <section className="py-20 bg-primary text-primary-foreground">
+        <div className="container">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { end: 200000, suffix: "+", label: "Lives Rescued", icon: Heart },
+              { end: 8, suffix: "+", label: "Years of Service", icon: Sparkles },
+              { end: 6, suffix: "", label: "Ambulances", icon: Truck },
+              { end: 2, suffix: "", label: "Shelters & Hospitals", icon: Bird },
+            ].map((stat, i) => (
+              <div key={i} className="bg-primary-foreground/10 rounded-xl p-6 text-center backdrop-blur-sm">
+                <stat.icon className="h-6 w-6 mx-auto mb-2 opacity-80" />
+                <StatCounter end={stat.end} suffix={stat.suffix} label={stat.label} />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Stories */}
-      <section className="py-16">
+      <section className="py-20">
         <div className="container">
-          <h2 className="font-display text-3xl font-bold text-center mb-12">Rescue Stories</h2>
+          <h2 className="font-display text-3xl font-bold text-center mb-4">Rescue Stories</h2>
+          <div className="section-divider mb-12" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {stories.map((story, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <Card className="h-full border-none bg-card">
+                <Card className="h-full border-l-4 border-l-primary hover:shadow-md transition-shadow">
                   <CardContent className="p-8">
-                    <span className="inline-block bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full mb-4">{story.tag}</span>
+                    <div className="flex items-center gap-2 mb-4">
+                      <story.icon className="h-4 w-4 text-primary" />
+                      <span className="inline-block bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">{story.tag}</span>
+                    </div>
                     <h3 className="font-display text-lg font-semibold mb-2">{story.title}</h3>
                     <p className="text-muted-foreground text-sm">{story.desc}</p>
                   </CardContent>
@@ -97,9 +111,10 @@ const GallerySection = ({ images }: { images: { src: string; alt: string }[] }) 
 
   return (
     <>
-      <section className="py-16 bg-muted/50">
+      <section className="py-20 bg-muted/50">
         <div className="container">
-          <h2 className="font-display text-3xl font-bold text-center mb-12">Photo Gallery</h2>
+          <h2 className="font-display text-3xl font-bold text-center mb-4">Photo Gallery</h2>
+          <div className="section-divider mb-12" />
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {images.map((img, i) => (
               <motion.div
@@ -108,10 +123,13 @@ const GallerySection = ({ images }: { images: { src: string; alt: string }[] }) 
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="aspect-square rounded-lg overflow-hidden cursor-pointer"
+                className="aspect-square rounded-xl overflow-hidden cursor-pointer group relative"
                 onClick={() => setSelected(i)}
               >
-                <img src={img.src} alt={img.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" />
+                <img src={img.src} alt={img.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                  <span className="text-white text-xs font-medium">{img.alt}</span>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -128,24 +146,9 @@ const GallerySection = ({ images }: { images: { src: string; alt: string }[] }) 
             className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
             onClick={() => setSelected(null)}
           >
-            <button
-              onClick={(e) => { e.stopPropagation(); setSelected(null); }}
-              className="absolute top-4 right-4 text-white/80 hover:text-white z-50"
-            >
-              <X className="h-8 w-8" />
-            </button>
-            <button
-              onClick={(e) => { e.stopPropagation(); navigate(-1); }}
-              className="absolute left-4 text-white/80 hover:text-white z-50"
-            >
-              <ChevronLeft className="h-10 w-10" />
-            </button>
-            <button
-              onClick={(e) => { e.stopPropagation(); navigate(1); }}
-              className="absolute right-4 text-white/80 hover:text-white z-50"
-            >
-              <ChevronRight className="h-10 w-10" />
-            </button>
+            <button onClick={(e) => { e.stopPropagation(); setSelected(null); }} className="absolute top-4 right-4 text-white/80 hover:text-white z-50"><X className="h-8 w-8" /></button>
+            <button onClick={(e) => { e.stopPropagation(); navigate(-1); }} className="absolute left-4 text-white/80 hover:text-white z-50"><ChevronLeft className="h-10 w-10" /></button>
+            <button onClick={(e) => { e.stopPropagation(); navigate(1); }} className="absolute right-4 text-white/80 hover:text-white z-50"><ChevronRight className="h-10 w-10" /></button>
             <motion.img
               key={selected}
               initial={{ opacity: 0, scale: 0.9 }}
