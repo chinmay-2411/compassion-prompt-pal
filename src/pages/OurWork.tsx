@@ -125,8 +125,8 @@ const OurWork = () => {
               className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-8 items-center`}
             >
               <div className="lg:w-1/2">
-                <div className="rounded-2xl overflow-hidden shadow-lg">
-                  <img src={s.image} alt={s.title} className="w-full h-auto max-h-[400px] object-contain" loading="lazy" />
+                <div className="rounded-2xl overflow-hidden shadow-lg bg-muted">
+                  <img src={s.image} alt={s.title} className="w-full h-auto object-contain" loading="lazy" />
                 </div>
               </div>
               <div className="lg:w-1/2">
