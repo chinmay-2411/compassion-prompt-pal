@@ -16,7 +16,7 @@ import gallery10 from "@/assets/gallery/gallery-10.jpg";
 import gallery11 from "@/assets/gallery/gallery-11.jpg";
 import gallery12 from "@/assets/gallery/gallery-12.jpg";
 import gallery13 from "@/assets/gallery/gallery-13.jpg";
-import gallery14 from "@/assets/gallery/gallery-14.jpg";
+
 
 const galleryImages = [
   { src: gallery1, alt: "Meeting with former President of India" },
@@ -32,7 +32,7 @@ const galleryImages = [
   { src: gallery11, alt: "Meeting with officials" },
   { src: gallery12, alt: "Bird rescue in action" },
   { src: gallery13, alt: "ANI News interview about bike ambulance" },
-  { src: gallery14, alt: "Dainik Jagran newspaper feature" },
+  
 ];
 
 const stories = [
